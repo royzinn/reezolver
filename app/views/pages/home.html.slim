@@ -1,0 +1,27 @@
+.container.pt-4.pb-5
+  .row
+    .col-lg-3
+      .card.d-none.d-lg-block
+        .card-body
+          h6.mb-3
+            | Trending Searches
+          ul.list-unstyled.list-spaced
+            li
+              a href="#"  #Bootstrap
+            li
+              a href="#"  Mdo for pres
+    .col-lg-6
+      #decisions data=@decisions.to_json(include: [:user, answers: { include: :user }])
+    .col-lg-3
+      .card.mb-4.d-none.d-lg-block
+        .card-body
+          h6.mb-3 Sponsored
+          div data-grid="images" data-target-height="150"
+            img.media-object data-action="zoom" data-height="640" data-width="640" src="assets/img/instagram_2.jpg" /
+          p
+            strong It might be time to visit Iceland.
+            | Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?
+          button.btn.btn-outline-primary.btn-sm Buy a ticket
+
+
+= javascript_pack_tag 'decisions'

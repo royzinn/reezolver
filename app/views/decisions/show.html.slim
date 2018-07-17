@@ -1,0 +1,82 @@
+.container.pt-4.pb-5
+  .row
+    .col-lg-3
+      .card.card-profile.mb-4
+        .card-header style=("background-image: url(assets/img/iceland.jpg);")
+        .card-body.text-center
+          a href="profile/index.html"
+            img.card-profile-img src="assets/img/avatar-dhg.png" /
+          h6.card-title
+            a.text-inherit href="profile/index.html"  Dave Gamache
+          p.mb-4 I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.
+          ul.card-menu
+            li.card-menu-item
+              a.text-inherit data-toggle="modal" href="#userModal"
+                | Friends
+              h6.my-0 12M
+            li.card-menu-item
+              a.text-inherit data-toggle="modal" href="#userModal"
+                | Enemies
+              h6.my-0 1
+    .col-lg-6
+      #decisions data=@decision.to_json(include: [answers: [:user], :user])
+
+
+    .col-lg-3
+      .card.mb-4.d-none.d-lg-block
+        .card-body
+          h6.mb-3 Sponsored
+          div data-grid="images" data-target-height="150"
+            img.media-object data-action="zoom" data-height="640" data-width="640" src="assets/img/instagram_2.jpg" /
+          p
+            strong It might be time to visit Iceland.
+            | Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?
+          button.btn.btn-outline-primary.btn-sm Buy a ticket
+      .card.mb-4.d-none.d-lg-block
+        .card-body
+          h6.mb-3
+            | Likes
+            small
+              | ·
+              a href="#"  View All
+          ul.media-list.media-list-stream
+            li.media.mb-2
+              img.media-object.d-flex.align-self-start.mr-3 src="assets/img/avatar-fat.jpg" /
+              .media-body
+                strong Jacob Thornton
+                | @fat
+                .media-body-actions
+                  button.btn.btn-outline-primary.btn-sm
+                    span.icon.icon-add-user
+                    | Follow
+            li.media
+              a.media-left href="#"
+                img.media-object.d-flex.align-self-start.mr-3 src="assets/img/avatar-mdo.png" /
+              .media-body
+                strong Mark Otto
+                | @mdo
+                .media-body-actions
+                  button.btn.btn-outline-primary.btn-sm
+                    span.icon.icon-add-user
+                    | Follow
+        .card-footer
+          | Dave really likes these nerds, no one knows why though.
+      .card.card-link-list
+        .card-body
+          | © 2018 Bootstrap
+          a href="#"  About
+          a href="#"  Help
+          a href="#"  Terms
+          a href="#"  Privacy
+          a href="#"  Cookies
+          a href="#"  Ads
+          a href="#"  Info
+          a href="#"  Brand
+          a href="#"  Blog
+          a href="#"  Status
+          a href="#"  Apps
+          a href="#"  Jobs
+          a href="#"  Advertise
+
+
+= javascript_pack_tag 'decisions'

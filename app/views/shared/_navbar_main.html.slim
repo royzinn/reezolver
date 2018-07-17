@@ -1,0 +1,39 @@
+nav.navbar.navbar-expand-md.fixed-top.navbar-dark.bg-primary.app-navbar
+  .container
+    a.navbar-brand href="index.html"
+      img alt="brand" src="assets/img/brand-white.png" /
+    button.navbar-toggler.navbar-toggler-right.d-md-none aria-controls="navbarResponsive" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarResponsive" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      - if current_user
+        ul.navbar-nav.mr-auto
+          li.nav-item.d-md-none
+            a.nav-link href="notifications/index.html"  Notifications
+          li.nav-item.d-md-none
+            a.nav-link data-action="growl"  Growl
+          li.nav-item.d-md-none
+            a.nav-link href="login/index.html"  Logout
+      - else
+        ul.navbar-nav.mr-auto
+          li.nav-item.d-md-none
+            a.nav-link href="notifications/index.html"  Login
+      form.form-inline.float-right.d-none.d-md-flex
+        input.form-control data-action="grow" placeholder="Search" type="text" /
+      - if current_user
+        ul.nav.navbar-nav.float-right.mr-0.d-none.d-md-flex id="#js-popoverContent"
+          li.nav-item
+            a.app-notifications.nav-link href="notifications/index.html"
+              span.icon.icon-bell
+          li.nav-item.ml-2
+            button.btn.btn-default.navbar-btn.navbar-btn-avatar data-toggle="popover"
+              img.rounded-circle src=(current_user.image_url || '/assets/avatar.png')
+          li.nav-item.ml-2
+            = link_to 'sign out', destroy_user_session_path, method: :delete, class: 'popover-link'
+        ul#js-popoverContent.nav.navbar-nav.d-none
+          li.nav-item
+            a.nav-link data-action="growl" href="#"  Growl
+          li.nav-item
+            a.nav-link href="login/index.html"  Logout
+      - else
+        ul.nav.navbar-nav.float-right.mr-0.d-none.d-md-flex id="#js-popoverContent"
+          = link_to 'Login', new_user_session_path, class: 'nav-link'

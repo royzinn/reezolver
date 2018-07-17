@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta content='IE=edge' http-equiv='X-UA-Compatible'
+    meta content='width=device-width, initial-scale=1' name='viewport'
+    meta name='description' content=""
+    meta name='keywords'    content=""
+
+    title = content_for?(:title) ? yield(:title) : 'Reezolver'
+
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body.with-top-navbar class="c-#{controller_path.gsub(/\//, '-')} a-#{action_name}" data-env=Rails.env
+    header
+      = render '/shared/navbar_main'
+
+    main role='main'
+      #content
+        = yield
+
+    footer
+      / = render '/shared/footer'

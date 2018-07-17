@@ -1,0 +1,17 @@
+.container-fluid.container-fill-height
+  .container-content-middle
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'mx-auto text-center app-login-form', role: 'form' }) do |f|
+      .social-login.d-flex.flex-column
+        - resource_class.omniauth_providers.each do |provider|
+          = link_to omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary' do
+             span class=("icon icon-#{provider} m-2")
+             | Sign in with #{OmniAuth::Utils.camelize(provider)}
+          br
+      .form-group
+        = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'email'
+      .form-group.mb-3
+        = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: 'password'
+      .mb-5
+        button.btn.btn-primary Log In
+      = render 'devise/shared/links'
+

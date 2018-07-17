@@ -3,11 +3,16 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.2.0",
+    "axios": "^0.17.1",
     "babel-preset-react": "^6.24.1",
     "coffeescript": "1.12.7",
+    "moment": "^2.20.1",
     "prop-types": "^15.6.0",
+    "rails-erb-loader": "^5.2.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-tagsinput": "^3.19.0",
+    "react-trix": "^0.2.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.10.1"

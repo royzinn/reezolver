@@ -1,0 +1,80 @@
+// Place all the styles related to the decisions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.c-pages, .c-decisions {
+  .decision-wrap {
+    margin-bottom: 5px;
+
+    li.answer-wrap{
+      background-color: aliceblue;
+
+      .media-body-text {
+        background-color: #a8d7f7;
+
+        &:before {
+          border-right: 6px solid #a8d8f7;
+        }
+      }
+    }
+
+    hr {
+      width: 100%;
+    }
+  }
+  textarea.inline-answer {
+    resize: none;
+    outline: none;
+  }
+
+  form.new-decision{
+    .question-section, .options-section, .tags-section {
+      .title {
+        display: flex;
+        color: #2196f3;
+      }
+      .name {
+        letter-spacing: 1.6px;
+        font-weight: 500;
+        font-size: 24px;
+      }
+      .icon {
+        font-size: 24px;
+      }
+    }
+    button.add-option {
+      width: 100%;
+      height: 60px;
+      color: #a5a9b1;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 8px;
+      border: 2px dashed #e5e9f2;
+      -webkit-transition: background-color .1s ease, -webkit-box-shadow .1s ease;
+      transition: background-color .1s ease, -webkit-box-shadow .1s ease;
+      transition: background-color .1s ease, box-shadow .1s ease;
+      transition: background-color .1s ease, box-shadow .1s ease, -webkit-box-shadow .1s ease;
+      background: transparent;
+
+      &:hover {
+        background-color: #FFF;
+        border-radius: 8px;
+        border: 1px solid #e5e9f2;
+        color: #2196f3;
+      }
+
+      .layout {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+    }
+  }
+
+}
+
